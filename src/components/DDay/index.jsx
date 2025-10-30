@@ -5,7 +5,7 @@ function DDay() {
   const [diffDay, setDiffDay] = useState({});
 
   const makeDiffDay = () => {
-    const masTime = new Date('2023-09-09 14:30:00');
+    const masTime = new Date('2026-03-28 13:30:00');
     const todayTime = new Date();
 
     const diff = masTime - todayTime;
@@ -34,8 +34,8 @@ function DDay() {
   return (
     <div className="dday">
       <div className="text">
-        유정&nbsp;
-        <span>♥</span> 지환의 결혼식까지 <span>{diffDay.day}일</span>{' '}
+        세인&nbsp;
+        <span>♥</span> 원식의 결혼식까지 <span>{diffDay.day}일</span>{' '}
         남았습니다.
       </div>
       <div className="count">

@@ -12,16 +12,16 @@ function Calendar() {
   useScrollFadeIn(calendarRef);
 
   const makeCalendarGrid = () => {
-    const temp = [['', '', '', '', '']];
-    for (let i = 1; i < 31; i += 1) {
+    const temp = [];
+    for (let i = 0; i < 30; i += 1) {
       const a = Math.floor(i / 7);
       const b = i % 7;
-      const index = b < 3 ? a : a + 1;
+      const index = a;
 
       if (temp[index]) {
-        temp[index].push(i);
+        temp[index].push(i + 1);
       } else {
-        temp.push([i]);
+        temp.push([i + 1]);
       }
     }
     return temp;
@@ -34,8 +34,8 @@ function Calendar() {
   return (
     <div className="calendar" ref={calendarRef}>
       <div className="month">
-        <span className="month-subtext">September</span>
-        <span className="month-text">9월</span>
+        <span className="month-subtext">March</span>
+        <span className="month-text">3월</span>
       </div>
       <div className="calendar-wrapper">
         <div className="dayname">
@@ -52,8 +52,8 @@ function Calendar() {
             <div className="week" key={week}>
               {week.map((day, index) => (
                 <div key={`day_${index}`} className="day">
-                  <span className={day === 9 ? 'wedding' : ''}>{day}</span>
-                  {day === 9 && <img src={heartIcon} alt="" />}
+                  <span className={day === 28 ? 'wedding' : ''}>{day}</span>
+                  {day === 28 && <img src={heartIcon} alt="" />}
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ function Calendar() {
       </div>
       <div className="date-text">
         <img src={clockIcon} alt="" />
-        <span>23년 9월 9일 토요일 오후 2시 30분</span>
+        <span>26년 3월 28일 토요일 오후 1시 30분</span>
       </div>
       {/* <div className="date-text">엘리에나호텔 컨벤션홀</div> */}
     </div>

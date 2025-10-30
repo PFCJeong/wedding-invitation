@@ -168,11 +168,11 @@ function App() {
       {loading && (
         <div className="loading">
           <div className="decoration">Our Wedding Day</div>
-          <div className="loading-content">유정 ♥ 지환</div>
+          <div className="loading-content">세인 ♥ 원식</div>
         </div>
       )}
       <div className="header">
-        <div className="title">YUJEONG & JIHWAN</div>
+        <div className="title">SEIN & WONSIK</div>
         <div className="buttons">
           <CopyToClipboard
             text={process.env.REACT_APP_MAIN_LINK}
@@ -210,12 +210,12 @@ function App() {
           <div className="name-wrapper">
             <div className="name">
               <img src={flowerIcon} alt="" />
-              <strong>김호영 · 소혜경</strong>의 <div className="sub">아들</div>
-              <span>지환</span>
+              <strong>정동명 · 이기옥</strong>의 <div className="sub">아들</div>
+              <span>원식</span>
             </div>
             <div className="name">
-              <strong>최흥길 · 김경애</strong>의 <div className="sub">딸</div>
-              <span>유정</span>
+              <strong>이형찬 · 김미경</strong>의 <div className="sub">딸</div>
+              <span>세인</span>
             </div>
           </div>
         </div>
@@ -223,70 +223,9 @@ function App() {
         <Calendar />
         <DDay />
         <Gallery handleClickImage={handleClickImage} />
-        <div className="quiz">
-          <div className="sub-title">JOIN US</div>
-          <div className="title">신랑신부 퀴즈 풀기</div>
-          <div className="quiz-wrapper">
-            <img src={basketImg} alt="" />
-            <div className="description">
-              <p>신랑신부에 대한 퀴즈를 풀어보세요!</p>
-              <p>참여해 주신 분들과</p>
-              <p>고득점을 얻은 분들께는</p>
-              <p>결혼식 2부 진행 시</p>
-              <p>추첨을 통해 상품을 드립니다🎁</p>
-              <br />
-              <p>신랑신부에 대해 알아가는</p>
-              <p>재밌는 시간이 되길 바랍니다😊</p>
-            </div>
-            <button className="button" type="button" onClick={handleClickQuiz}>
-              퀴즈 풀어보기
-            </button>
-          </div>
-        </div>
         <Information />
         <Location />
         <Account setCopyModal={setCopyModal} />
-        <div className="rsvp">
-          <div className="sub-title">save the date</div>
-          <div className="title">참석 의사 전달</div>
-          <div className="rsvp-wrapper">
-            <img src={leafImg} alt="" />
-            <div className="description">
-              <p>모든 분들께</p>
-              <p>부족함 없는 예식을 준비하기 위해</p>
-              <p>참석 및 식사 여부를</p>
-              <p>미리 여쭙고자 합니다.</p>
-              <br />
-              <p>부담없이 알려주시면</p>
-              <p>정성껏 준비하겠습니다.</p>
-            </div>
-            <button className="button" type="button" onClick={handleClickRsvp}>
-              참석 의사 전달하기
-            </button>
-          </div>
-        </div>
-
-        <GuestBook
-          handleWriteModal={handleWriteModal}
-          handleDeleteModal={handleDeleteModal}
-          guestbookList={guestbookList}
-          setGuestbookList={setGuestbookList}
-        />
-        <div className="share">
-          <CopyToClipboard
-            text={process.env.REACT_APP_MAIN_LINK}
-            onCopy={handleCopyOk}
-          >
-            <div className="link-share" aria-hidden="true">
-              <img src={linkIcon} alt="" />
-              링크주소 복사하기
-            </div>
-          </CopyToClipboard>
-          <div className="kakao-share" aria-hidden="true" onClick={shareKakao}>
-            <img src={kakaoIcon} alt="" />
-            카카오톡 공유하기
-          </div>
-        </div>
         <div className="thanks">
           <div className="title">Thanks To</div>
           <div className="thanks-wrapper">
