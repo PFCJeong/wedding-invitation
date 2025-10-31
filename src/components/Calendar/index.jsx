@@ -15,7 +15,7 @@ function Calendar() {
     const temp = [];
     for (let i = 0; i < 30; i += 1) {
       const a = Math.floor(i / 7);
-      const b = i % 7;
+      // const b = i % 7;
       const index = a;
 
       if (temp[index]) {

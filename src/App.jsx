@@ -18,7 +18,7 @@ import RsvpModal from './components/RsvpModal';
 import Gallery from './components/Gallery';
 import ImageSlide from './components/ImageSlide';
 import Quiz from './components/Quiz';
-import GuestBook from './components/GuestBook';
+// import GuestBook from './components/GuestBook';
 import WriteModal from './components/GuestBook/WriteModal';
 import DeleteModal from './components/GuestBook/DeleteModal';
 
@@ -29,8 +29,8 @@ import kakaoIcon from './assets/icons/kakao-talk.png';
 import leafIcon from './assets/icons/green-tea.png';
 
 import purpleImg from './assets/background/purple.png';
-import leafImg from './assets/background/leaf.png';
-import basketImg from './assets/background/pink.png';
+// import leafImg from './assets/background/leaf.png';
+// import basketImg from './assets/background/pink.png';
 
 import './style.scss';
 import 'react-toastify/dist/ReactToastify.css';
@@ -45,7 +45,7 @@ export const shareKakao = () => {
     kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '김지환 ♥ 최유정의 결혼식에 초대합니다.',
+        title: '정원식 ♥ 이세인의 결혼식에 초대합니다.',
         description: '23.09.09 PM 2:30 · 엘리에나호텔',
         imageUrl: 'https://i.postimg.cc/6Wr3MfXf/kakaoshare.jpg',
         link: {
@@ -119,10 +119,10 @@ function App() {
     openScroll();
   };
 
-  const handleClickQuiz = () => {
-    setQuizModal(true);
-    lockScroll();
-  };
+  // const handleClickQuiz = () => {
+  //   setQuizModal(true);
+  //   lockScroll();
+  // };
 
   const handleCloseQuiz = () => {
     setQuizModal(false);
@@ -133,10 +133,10 @@ function App() {
     setLoading(false);
   }, 2500);
 
-  const handleClickRsvp = () => {
-    setRsvpModal(true);
-    lockScroll();
-  };
+  // const handleClickRsvp = () => {
+  //   setRsvpModal(true);
+  //   lockScroll();
+  // };
 
   const handleCloseRsvpModal = () => {
     setRsvpModal(false);
