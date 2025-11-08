@@ -434,6 +434,89 @@ aws route53 list-resource-record-sets \
 # AWS 콘솔 → Route 53 → Registered domains
 ```
 
+### 5. Docker 플랫폼 불일치 에러
+
+**증상**: 컨테이너 로그에 `exec /docker-entrypoint.sh: exec format error` 에러 발생
+
+**원인**: 로컬에서 ARM64용 이미지를 빌드했는데, EC2 인스턴스가 AMD64 아키텍처를 사용
+
+**해결 방법**:
+
+```bash
+# AMD64 플랫폼용으로 이미지 빌드
+docker build --platform linux/amd64 -t wedding-invitation:latest .
+
+# 이미지 저장 및 전송
+docker save wedding-invitation:latest | gzip > wedding-invitation.tar.gz
+scp -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" \
+    wedding-invitation.tar.gz \
+    ec2-user@3.104.119.97:~/
+
+# EC2에서 배포
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+docker stop wedding-app 2>/dev/null || true
+docker rm wedding-app 2>/dev/null || true
+docker rmi wedding-invitation:latest 2>/dev/null || true
+gunzip -c wedding-invitation.tar.gz | docker load
+docker run -d -p 80:80 -p 443:443 \
+    --name wedding-app \
+    --restart unless-stopped \
+    -v /etc/letsencrypt:/etc/letsencrypt:ro \
+    wedding-invitation:latest
+EOF
+```
+
+**확인 방법**:
+
+```bash
+# 컨테이너가 정상 실행 중인지 확인
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 'docker ps'
+
+# 컨테이너 로그 확인 (에러가 없어야 함)
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 'docker logs wedding-app'
+```
+
+### 6. SSH Host Key Verification Failed
+
+**증상**: SCP 또는 SSH 연결 시 `Host key verification failed` 에러 발생
+
+**원인**: SSH known_hosts 파일에 EC2 호스트 키가 등록되지 않음
+
+**해결 방법**:
+
+```bash
+# EC2 호스트 키를 known_hosts에 추가
+ssh-keyscan -H 3.104.119.97 >> ~/.ssh/known_hosts
+
+# 다시 연결 시도
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97
+```
+
+### 7. SSH 키 권한 에러 (상세)
+
+**증상**:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for '/Users/jeong-wonsik/Downloads/wonsiksein.pem' are too open.
+```
+
+**원인**: SSH 키 파일의 권한이 너무 열려있어서 보안상 SSH가 키를 거부함
+
+**해결 방법**:
+
+```bash
+# 현재 권한 확인
+ls -l /Users/jeong-wonsik/Downloads/wonsiksein.pem
+
+# 권한을 400 (소유자만 읽기 가능)으로 변경
+chmod 400 /Users/jeong-wonsik/Downloads/wonsiksein.pem
+
+# 권한 변경 확인 (-r-------- 이어야 함)
+ls -l /Users/jeong-wonsik/Downloads/wonsiksein.pem
+```
+
 ---
 
 ## 참고 정보
