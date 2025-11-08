@@ -15,7 +15,7 @@
 
 ### 필요한 정보
 - **EC2 인스턴스 퍼블릭 IP**: `3.104.119.97`
-- **SSH 키 파일 경로**: `/Users/jon.snow/Downloads/wonsiksein.pem`
+- **SSH 키 파일 경로**: `/Users/jeong-wonsik/Downloads/wonsiksein.pem`
 - **EC2 사용자 이름**: `ec2-user` (Amazon Linux의 기본 사용자)
 - **도메인**: `wonsik-se.in`
 
@@ -31,13 +31,13 @@
 ### 1. SSH 키 파일 권한 설정
 
 ```bash
-chmod 400 /Users/jon.snow/Downloads/wonsiksein.pem
+chmod 400 /Users/jeong-wonsik/Downloads/wonsiksein.pem
 ```
 
 ### 2. SSH 연결 테스트
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97
 ```
 
 성공하면 EC2 인스턴스에 접속됩니다.
@@ -55,7 +55,7 @@ exit
 ### 1. EC2에 SSH 접속 후 Docker 설치
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 시스템 업데이트
 sudo yum update -y
 
@@ -105,7 +105,7 @@ ls -lh wedding-invitation.tar.gz
 ### 3. SCP로 EC2에 이미지 전송
 
 ```bash
-scp -i "/Users/jon.snow/Downloads/wonsiksein.pem" \
+scp -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" \
     wedding-invitation.tar.gz \
     ec2-user@3.104.119.97:~/
 ```
@@ -117,7 +117,7 @@ scp -i "/Users/jon.snow/Downloads/wonsiksein.pem" \
 ### 1. EC2에 SSH 접속하여 이미지 로드 및 실행
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # Docker 이미지 로드
 gunzip -c wedding-invitation.tar.gz | docker load
 
@@ -262,7 +262,7 @@ DNS가 전파된 후:
 ### EC2 접속
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97
 ```
 
 ### Docker 컨테이너 관리
@@ -306,12 +306,12 @@ docker build -t wedding-invitation:latest .
 docker save wedding-invitation:latest | gzip > wedding-invitation.tar.gz
 
 # 3. EC2로 전송
-scp -i "/Users/jon.snow/Downloads/wonsiksein.pem" \
+scp -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" \
     wedding-invitation.tar.gz \
     ec2-user@3.104.119.97:~/
 
 # 4. EC2에서 업데이트
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 기존 컨테이너 중지 및 제거
 docker stop wedding-app
 docker rm wedding-app
@@ -392,11 +392,11 @@ AWS 콘솔에서 수동 설정:
 
 ```bash
 # 키 파일 권한 확인
-ls -l /Users/jon.snow/Downloads/wonsiksein.pem
+ls -l /Users/jeong-wonsik/Downloads/wonsiksein.pem
 # -r-------- 이어야 함
 
 # 권한 재설정
-chmod 400 /Users/jon.snow/Downloads/wonsiksein.pem
+chmod 400 /Users/jeong-wonsik/Downloads/wonsiksein.pem
 ```
 
 ### 2. Docker 명령어 권한 오류
@@ -529,7 +529,7 @@ docker tag wedding-invitation:latest your-username/wedding-invitation:latest
 docker push your-username/wedding-invitation:latest
 
 # EC2에서 pull
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 \
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 \
     "docker pull your-username/wedding-invitation:latest"
 ```
 
@@ -540,7 +540,7 @@ ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 \
 ### 1. EC2에 Certbot 설치
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # Certbot 설치
 sudo yum install -y certbot
 
@@ -558,7 +558,7 @@ EOF
 **중요**: 인증서 발급 전에 기존 컨테이너를 중지하여 포트 80을 비워야 합니다.
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 기존 컨테이너 중지
 docker stop wedding-app
 
@@ -670,12 +670,12 @@ docker build -t wedding-invitation:latest .
 docker save wedding-invitation:latest | gzip > wedding-invitation-ssl.tar.gz
 
 # 3. EC2로 전송
-scp -i "/Users/jon.snow/Downloads/wonsiksein.pem" \
+scp -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" \
     wedding-invitation-ssl.tar.gz \
     ec2-user@3.104.119.97:~/
 
 # 4. EC2에서 배포
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 이미지 로드
 gunzip -c wedding-invitation-ssl.tar.gz | docker load
 
@@ -718,7 +718,7 @@ AWS 콘솔에서:
 Let's Encrypt 인증서는 90일마다 갱신이 필요합니다. 자동 갱신 설정:
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # Certbot 자동 갱신 타이머 활성화
 sudo systemctl enable certbot-renew.timer
 sudo systemctl start certbot-renew.timer
@@ -746,7 +746,7 @@ curl -I https://wonsik-se.in
 인증서가 갱신된 후에는 Docker 컨테이너를 재시작해야 새 인증서가 적용됩니다:
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 컨테이너 재시작
 docker restart wedding-app
 EOF
@@ -759,7 +759,7 @@ EOF
 DNS가 완전히 전파된 후 www를 포함한 인증서 재발급:
 
 ```bash
-ssh -i "/Users/jon.snow/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
+ssh -i "/Users/jeong-wonsik/Downloads/wonsiksein.pem" ec2-user@3.104.119.97 << 'EOF'
 # 기존 컨테이너 중지
 docker stop wedding-app
 
