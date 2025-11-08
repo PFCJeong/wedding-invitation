@@ -21,6 +21,9 @@
 
 /src/assets/keys
 
+# Docker images
+wedding-invitation.tar.gz
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
