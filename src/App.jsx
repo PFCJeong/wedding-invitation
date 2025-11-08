@@ -23,7 +23,6 @@ import WriteModal from './components/GuestBook/WriteModal';
 import DeleteModal from './components/GuestBook/DeleteModal';
 
 import mainImg from './assets/photo/main3.jpg';
-import flowerIcon from './assets/icons/daisy.png';
 import linkIcon from './assets/icons/link.png';
 import kakaoIcon from './assets/icons/kakao-talk.png';
 import leafIcon from './assets/icons/green-tea.png';
@@ -198,18 +197,20 @@ function App() {
           {/* <div className="title">Invitation</div> */}
           <div className="text">
             <img src={purpleImg} alt="" />
-            <p>지환 그리고 유정,</p>
-            <p>한 곳을 바라보며 첫 발을 떼는 날</p>
-            <p>곁에서 아껴주셨던 고마운 분들을 모십니다.</p>
+            <p>10년지기 친구에서 연인으로,</p>
+            <p>이제는 연인에서 부부로</p>
+            <p>새로운 시작을 함께하려고 합니다.</p>
             <br />
-            <p>서로 소중히 아끼고 처음처럼 사랑하며</p>
-            <p>예쁘게 살겠습니다.</p>
-            <p>따뜻한 사랑으로 축복해주세요.</p>
+            <p>늘 같은 마음으로 서로를 아끼며</p>
+            <p>사랑과 믿음으로 함께 걸어가겠습니다.</p>
+            <br />
+            <p>따뜻한 발걸음으로</p>
+            <p>저희의 새로운 시작을</p>
+            <p>함께해 주시면 감사하겠습니다.</p>
           </div>
           <div className="line" />
           <div className="name-wrapper">
             <div className="name">
-              <img src={flowerIcon} alt="" />
               <strong>정동명 · 이기옥</strong>의 <div className="sub">아들</div>
               <span>원식</span>
             </div>

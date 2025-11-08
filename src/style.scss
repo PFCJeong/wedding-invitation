@@ -382,6 +382,15 @@ html {
             &:nth-child(8){
               animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both;
             }
+            &:nth-child(9){
+              animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+            }
+            &:nth-child(10){
+              animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+            }
+            &:nth-child(11){
+              animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+            }
           }
         }
 
