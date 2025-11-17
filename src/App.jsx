@@ -45,8 +45,8 @@ export const shareKakao = () => {
       objectType: 'feed',
       content: {
         title: '정원식 ♥ 이세인의 결혼식에 초대합니다.',
-        description: '23.09.09 PM 2:30 · 엘리에나호텔',
-        imageUrl: 'https://i.postimg.cc/6Wr3MfXf/kakaoshare.jpg',
+        description: '26.03.28 PM 1:30 · 더파티움여의도',
+        imageUrl: 'https://i.postimg.cc/6Wr3MfXf/kakaoshare.jpg', // FIXME
         link: {
           mobileWebUrl: process.env.REACT_APP_MAIN_LINK,
           webUrl: process.env.REACT_APP_MAIN_LINK,
@@ -64,9 +64,9 @@ export const shareKakao = () => {
           title: '위치보기',
           link: {
             mobileWebUrl:
-              'https://map.naver.com/v5/entry/place/1354448162?c=15,0,0,0,dh',
+              'https://map.naver.com/p/entry/place/1018318622?c=15.00,0,0,0',
             webUrl:
-              'https://map.naver.com/v5/entry/place/1354448162?c=15,0,0,0,dh',
+              'https://map.naver.com/p/entry/place/1018318622?c=15.00,0,0,0',
           },
         },
       ],
