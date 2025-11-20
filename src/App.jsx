@@ -12,7 +12,6 @@ import useBodyScrollLock from './hooks/useBodyScrollLock';
 import Account from './components/Account';
 import Calendar from './components/Calendar';
 import DDay from './components/DDay';
-import Information from './components/Information';
 import Location from './components/Location';
 import RsvpModal from './components/RsvpModal';
 import Gallery from './components/Gallery';
@@ -167,11 +166,11 @@ function App() {
       {loading && (
         <div className="loading">
           <div className="decoration">Our Wedding Day</div>
-          <div className="loading-content">세인 ♥ 원식</div>
+          <div className="loading-content">원식 ♥ 세인</div>
         </div>
       )}
       <div className="header">
-        <div className="title">SEIN & WONSIK</div>
+        <div className="title">WONSIK & SEIN</div>
         <div className="buttons">
           <CopyToClipboard
             text={process.env.REACT_APP_MAIN_LINK}
@@ -224,7 +223,6 @@ function App() {
         <Calendar />
         <DDay />
         <Gallery handleClickImage={handleClickImage} />
-        <Information />
         <Location />
         <Account setCopyModal={setCopyModal} />
         <div className="thanks">

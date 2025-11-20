@@ -122,58 +122,35 @@ function Location() {
         <div className="info-item">
           <div className="label">지하철</div>
           <div>
-            <span className="nine">9호선 국회의사당역</span> 3번 출구 도보 5분
+            <span className="nine">9호선 국회의사당역</span>
           </div>
           <div>
-            <span className="five">5호선 여의나루역</span> 1번 출구 셔틀버스 [여의나루역 2번출구 버스정류장(19140) 마을버스 10번 승차 기계회관 정류장 하차]
+            - [3번 출구] 도보 5분
+          </div>
+          <div>
+            <span className="five">5호선 여의나루역</span>
+          </div>
+          <div>
+            - [1번 출구] 무료 셔틀버스 이용
+          </div>
+          <div>
+            - [2번 출구] 마을버스 10번 승차 기계회관 정류장 하차
           </div>
         </div>
         <div className="info-item">
-          <div className="label">버스</div>
+          <div className="label">주차 안내</div>
           <div>
-            기계회관 (19-320)
-            <span>
-              <span className="blue">일반[10]</span>
-              <span className="green">마을[영등포10]</span>
-            </span>
+            <strong>제1주차장</strong>
           </div>
           <div>
-            산업은행본점 (19-281)
-            <span>
-              <span className="blue">일반[10]</span>
-              <span className="green">마을[영등포10]</span>
-              <span className="blue">간선[463]</span>
-            </span>
+            - 더파티움여의도 본관 주차장 (중소기업중앙회)
           </div>
           <div>
-            여의도순복음교회 (19-303)
-            <span>
-              <span className="blue">일반[10]</span>
-              <span className="green">마을[영등포10]</span>
-              <span className="blue">간선[463]</span>
-              <span className="blue">지선[5633]</span>
-            </span>
+            <strong>제2주차장</strong>
           </div>
           <div>
-            여의도 환승센터 (19-016)
-            <span>
-              <span className="blue">일반[88]</span>
-              <span className="blue">간선[8600]</span>
-              <span className="blue">간선[8601]</span>
-            </span>
-          </div>
-          <div>
-            여의도 환승센터 (19-008)
-            <span>
-              <span className="blue">간선[160]</span>
-              <span className="blue">간선[260]</span>
-              <span className="blue">간선[360]</span>
-              <span className="blue">간선[600]</span>
-              <span className="blue">간선[662]</span>
-              <span className="green">지선[5012]</span>
-              <span className="green">지선[6623]</span>
-              <span className="green">지선[6628]</span>
-            </span>
+            - 제2주차장 이용 시, 반드시 본관에 들러 직원 안내를 받으셔야 주차
+            등록 및 혜택이 가능합니다. (주차등록은 직원이 진행)
           </div>
         </div>
       </div>

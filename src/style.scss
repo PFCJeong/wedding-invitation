@@ -551,12 +551,12 @@ html {
         border-radius: 20px;
         margin: 30px auto 5px;
         font-size: 13px;
-        justify-content: space-between;
         padding: 0 15px;
         box-sizing: border-box;
 
         img {
           width: 18px;
+          margin-right: 8px;
         }
       }
 
@@ -711,10 +711,12 @@ html {
 
           .five {
             color: #A664A3;
+            font-weight: 700;
           }
 
           .nine {
             color: #BDB092;
+            font-weight: 700;
           }
 
           div + div {
