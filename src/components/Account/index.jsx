@@ -6,7 +6,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import kakaopayIcon from '../../assets/icons/kakaopay.png';
 import groomDownIcon from '../../assets/icons/chevron-down-groom.png';
 import brideDownIcon from '../../assets/icons/chevron-down-bride.png';
-import whiteFlowerImg from '../../assets/background/white.png';
 
 const accountInfo = {
   groom: {
@@ -91,10 +90,8 @@ function Account(props) {
 
   return (
     <div className="account">
-      <div className="sub-title">FOR YOUR HEART</div>
       <div className="title">마음 전하실 곳</div>
       <div className="description">
-        <img src={whiteFlowerImg} alt="" />
         <p>저희 두 사람의 소중한 시작을</p>
         <p>함께 해주시는 모든 분들게 감사드리며,</p>
         <p>전해주시는 따뜻한 진심을 배워</p>

@@ -24,11 +24,6 @@ import DeleteModal from './components/GuestBook/DeleteModal';
 import mainImg from './assets/photo/main3.jpg';
 import linkIcon from './assets/icons/link.png';
 import kakaoIcon from './assets/icons/kakao-talk.png';
-import leafIcon from './assets/icons/green-tea.png';
-
-import purpleImg from './assets/background/purple.png';
-// import leafImg from './assets/background/leaf.png';
-// import basketImg from './assets/background/pink.png';
 
 import './style.scss';
 import 'react-toastify/dist/ReactToastify.css';
@@ -186,16 +181,10 @@ function App() {
       <div className="content" id="smooth-scroll">
         <div className="main">
           <img className="main-img" src={mainImg} alt="" />
-          <div className="invite-text">
-            <img src={leafIcon} alt="" />
-            <p>저희 두 사람의 특별한 시작을</p>
-            <p>소중한 분들과 함께하고 싶습니다.</p>
-          </div>
         </div>
         <div className="invite" ref={inviteRef}>
           {/* <div className="title">Invitation</div> */}
           <div className="text">
-            <img src={purpleImg} alt="" />
             <p>10년지기 친구에서 연인으로,</p>
             <p>이제는 연인에서 부부로</p>
             <p>새로운 시작을 함께하려고 합니다.</p>

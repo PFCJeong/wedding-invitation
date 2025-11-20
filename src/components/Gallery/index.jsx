@@ -33,8 +33,7 @@ function Gallery({ handleClickImage }) {
 
   return (
     <div className="gallery">
-      <div className="sub-title">GALLERY</div>
-      <div className="title">우리의 순간들</div>
+      <div className="title">갤러리</div>
       {isMobile ? (
         <>
           <ScrollContainer className="scroll-container">

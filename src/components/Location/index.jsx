@@ -80,8 +80,7 @@ function Location() {
 
   return (
     <div className="map">
-      <div className="sub-title">LOCATION</div>
-      <div className="title">오시는 길을 안내합니다</div>
+      <div className="title">오시는 길</div>
       <div className="map-element" ref={mapElement} />
       <div className="location-wrapper">
         <div className="venue">
