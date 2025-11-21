@@ -63,7 +63,13 @@ function ImageSlide({ imageModal, handleCloseImageModal }) {
           >
             <Slider ref={sliderRef} {...settings}>
               {Object.keys(photoList).map((photo) => (
-                <img src={photoList[photo]} alt="" key={`photo_${photo}`} />
+                <img
+                  src={photoList[photo]}
+                  alt=""
+                  key={`photo_${photo}`}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
               ))}
             </Slider>
           </div>

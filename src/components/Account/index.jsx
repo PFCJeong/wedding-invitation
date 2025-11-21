@@ -53,7 +53,7 @@ const accountInfo = {
       },
       {
         type: '어머니',
-        name: '김미',
+        name: '김미경',
         bank: '신한은행',
         account: '110-325-774667',
         kakao: 'https://qr.kakaopay.com/FEhonaYzK',

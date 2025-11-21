@@ -22,7 +22,12 @@ function Gallery({ handleClickImage }) {
               onClick={() => handleClickImage(photo)}
               aria-hidden="true"
             >
-              <img src={photoList[photo]} alt="" />
+              <img
+                src={photoList[photo]}
+                alt=""
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              />
             </div>
           ))}
       </div>
