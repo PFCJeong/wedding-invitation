@@ -222,17 +222,6 @@ function App() {
         <Gallery handleClickImage={handleClickImage} />
         <Location />
         <Account setCopyModal={setCopyModal} />
-        <div className="thanks">
-          <div className="title">Thanks To</div>
-          <div className="thanks-wrapper">
-            <div>언제나 곁을 따뜻하게 지켜주시고</div>
-            <div>사랑으로 응원해주신</div>
-            <div>모든 분들께 감사드립니다.</div>
-          </div>
-          <div className="copyright">
-            Designed & Developed by Yujeong, Jihwan
-          </div>
-        </div>
       </div>
       {copyModal && (
         <div className="link-copy-modal">
