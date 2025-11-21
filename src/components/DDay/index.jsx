@@ -34,9 +34,8 @@ function DDay() {
   return (
     <div className="dday">
       <div className="text">
-        세인&nbsp;
-        <span>♥</span> 원식의 결혼식까지 <span>{diffDay.day}일</span>{' '}
-        남았습니다.
+        원식&nbsp;
+        <span>♥</span> 세인의 결혼식까지 <span>{diffDay.day}일</span>{' '}
       </div>
       <div className="count">
         <div className="count-item">

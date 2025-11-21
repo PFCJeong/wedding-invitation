@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import useScrollFadeIn from '../../hooks/useScrollFadeIn';
 import heartIcon from '../../assets/icons/heart.png';
-import clockIcon from '../../assets/icons/clock.png';
 
 function Calendar() {
   const calendarRef = useRef(null);
@@ -60,11 +59,6 @@ function Calendar() {
           ))}
         </div>
       </div>
-      <div className="date-text">
-        <img src={clockIcon} alt="" />
-        <span>26년 3월 28일 토요일 오후 1시 30분</span>
-      </div>
-      {/* <div className="date-text">엘리에나호텔 컨벤션홀</div> */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ import playIcon from '../../assets/icons/play-button.png';
 import closeIcon from '../../assets/icons/close.png';
 import correctIcon from '../../assets/icons/correct.png';
 import wrongIcon from '../../assets/icons/wrong.png';
-import mainImg from '../../assets/photo/18.jpg';
+import mainImg from '../../assets/photo/18.JPG';
 
 import useGoogleSheet, { getGoogleSheet } from '../../hooks/useGoogleSheet';
 

@@ -76,7 +76,7 @@ function Gallery({ handleClickImage }) {
         <>
           <div className="gallery-grid">
             {Object.keys(photoList)
-              .slice(0, showMore ? Object.keys(photoList).length : 12)
+              .slice(0, showMore ? Object.keys(photoList).length : 9)
               .map((photo) => (
                 <div
                   className="photo-item"

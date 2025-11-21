@@ -21,7 +21,7 @@ import Quiz from './components/Quiz';
 import WriteModal from './components/GuestBook/WriteModal';
 import DeleteModal from './components/GuestBook/DeleteModal';
 
-import mainImg from './assets/photo/main3.jpg';
+import mainImg from './assets/photo/11.JPG';
 import linkIcon from './assets/icons/link.png';
 import kakaoIcon from './assets/icons/kakao-talk.png';
 
@@ -184,6 +184,14 @@ function App() {
         </div>
         <div className="invite" ref={inviteRef}>
           {/* <div className="title">Invitation</div> */}
+          <div className="date-highlight">
+            <div className="date-line" />
+            <div className="date-info">
+              <div className="date">2026년 3월 28일 토요일 오후 1시 30분</div>
+              <div className="venue">더파티움여의도</div>
+            </div>
+            <div className="date-line" />
+          </div>
           <div className="text">
             <p>10년지기 친구에서 연인으로,</p>
             <p>이제는 연인에서 부부로</p>
