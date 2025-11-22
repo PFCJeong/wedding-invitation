@@ -32,7 +32,7 @@ export const shareKakao = () => {
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init(process.env.REACT_APP_KAKAO_KEY);
+      kakao.init('53c87cb5d8364da282e7979fd2fed6d6');
     }
 
     kakao.Share.sendDefault({

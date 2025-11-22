@@ -21,7 +21,7 @@ function Location() {
     const location = new naver.maps.LatLng(37.5279175, 126.9225461);
     const mapOptions = {
       center: location,
-      zoom: 15,
+      zoom: 13,
       zoomControl: true,
       zoomControlOptions: {
         position: naver.maps.Position.TOP_RIGHT,
