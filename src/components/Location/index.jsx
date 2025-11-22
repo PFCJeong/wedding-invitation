@@ -52,30 +52,33 @@ function Location() {
   };
 
   const handleClickKakaoMap = () => {
-    if (isIOS || isAndroid) {
-      if (window.Kakao) {
-        const kakao = window.Kakao;
-        if (!kakao.isInitialized()) {
-          kakao.init(process.env.REACT_APP_KAKAO_KEY);
-        }
-        kakao.Navi.start({
-          name: '더파티움',
-          x: 126.9225461,
-          y: 37.5279175,
-          coordType: 'wgs84',
-        });
-      }
-    } else {
-      window.open('https://map.kakao.com/?itemId=1197705393');
-    }
+    window.open('https://kko.kakao.com/l_KPH_lBVp');
+
+    // if (isIOS || isAndroid) {
+    //   if (window.Kakao) {
+    //     const kakao = window.Kakao;
+    //     if (!kakao.isInitialized()) {
+    //       kakao.init(process.env.REACT_APP_KAKAO_KEY);
+    //     }
+    //     kakao.Navi.start({
+    //       name: '더파티움',
+    //       x: 126.9225461,
+    //       y: 37.5279175,
+    //       coordType: 'wgs84',
+    //     });
+    //   }
+    // } else {
+    //   window.open('https://kko.kakao.com/l_KPH_lBVp');
+    // }
   };
 
   const handleClickTMap = () => {
-    if (isIOS || isAndroid) {
-      window.location.replace('tmap://search?name=더파티움');
-    } else {
-      window.open('https://tmap.life/df3c8d01');
-    }
+    window.open('https://tmap.life/df3c8d01');
+    // if (isIOS || isAndroid) {
+    //   window.location.replace('tmap://search?name=더파티움 여의도');
+    // } else {
+    //   window.open('https://tmap.life/df3c8d01');
+    // }
   };
 
   return (
