@@ -42,16 +42,16 @@ export const shareKakao = () => {
         description: '26.03.28 PM 1:30 · 더파티움여의도',
         imageUrl: 'https://i.postimg.cc/6Wr3MfXf/kakaoshare.jpg', // FIXME
         link: {
-          mobileWebUrl: process.env.REACT_APP_MAIN_LINK,
-          webUrl: process.env.REACT_APP_MAIN_LINK,
+          mobileWebUrl: 'https://wonsik-se.in',
+          webUrl: 'https://wonsik-se.in',
         },
       },
       buttons: [
         {
           title: '지금 확인하기',
           link: {
-            mobileWebUrl: process.env.REACT_APP_MAIN_LINK,
-            webUrl: process.env.REACT_APP_MAIN_LINK,
+            mobileWebUrl: 'https://wonsik-se.in',
+            webUrl: 'https://wonsik-se.in',
           },
         },
         {
@@ -167,10 +167,7 @@ function App() {
       <div className="header">
         <div className="title">WONSIK & SEIN</div>
         <div className="buttons">
-          <CopyToClipboard
-            text={process.env.REACT_APP_MAIN_LINK}
-            onCopy={handleCopyOk}
-          >
+          <CopyToClipboard text="https://wonsik-se.in" onCopy={handleCopyOk}>
             <img src={linkIcon} alt="" />
           </CopyToClipboard>
           <div onClick={shareKakao} aria-hidden="true">
