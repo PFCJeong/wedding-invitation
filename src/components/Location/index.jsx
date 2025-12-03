@@ -88,7 +88,7 @@ function Location() {
       <div className="location-wrapper">
         <div className="venue">
           <img src={mapMarkerIcon} alt="" />
-          더파티 여의도 파티움홀 (2F)
+          더파티움 여의도 파티움홀 (2F)
         </div>
         <div className="venue-info">
           <span>서울 영등포구 은행로 30 2층</span>
@@ -153,6 +153,9 @@ function Location() {
           <div>
             - 제2주차장 이용 시, 반드시 본관에 들러 직원 안내를 받으셔야 주차
             등록 및 혜택이 가능합니다. (주차등록은 직원이 진행)
+          </div>
+          <div>
+            ※ 주차 90분 무료 제공
           </div>
         </div>
       </div>
