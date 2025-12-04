@@ -1,7 +1,7 @@
 /* eslint-disable no-alert, no-new, react/jsx-one-expression-per-line,
 react/no-array-index-key,no-nested-ternary, indent  */
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ToastContainer } from 'react-toastify';
 // import scrollbar from 'smooth-scrollbar';
@@ -93,6 +93,31 @@ function App() {
   //     });
   //   }
   // }, []);
+
+  useEffect(() => {
+    // Prevent pinch zoom
+    const preventZoom = (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    const preventGestureZoom = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener('touchmove', preventZoom, { passive: false });
+    document.addEventListener('gesturestart', preventGestureZoom, { passive: false });
+    document.addEventListener('gesturechange', preventGestureZoom, { passive: false });
+    document.addEventListener('gestureend', preventGestureZoom, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', preventZoom);
+      document.removeEventListener('gesturestart', preventGestureZoom);
+      document.removeEventListener('gesturechange', preventGestureZoom);
+      document.removeEventListener('gestureend', preventGestureZoom);
+    };
+  }, []);
 
   const handleCopyOk = () => {
     setCopyModal('link');
