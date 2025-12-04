@@ -3,7 +3,6 @@ react/destructuring-assignment, react/prop-types */
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import kakaopayIcon from '../../assets/icons/kakaopay.png';
 import groomDownIcon from '../../assets/icons/chevron-down-groom.png';
 import brideDownIcon from '../../assets/icons/chevron-down-bride.png';
 
@@ -16,21 +15,18 @@ const accountInfo = {
         name: '정원식',
         bank: '농협은행',
         account: '302-0860-5280-71',
-        kakao: 'https://qr.kakaopay.com/Ej7kn0DoK',
       },
       {
         type: '아버지',
         name: '정동명',
         bank: '신한은행',
         account: '577-06-000606',
-        kakao: 'https://qr.kakaopay.com/FYysFddA1',
       },
       {
         type: '어머니',
         name: '이기옥',
         bank: '신한은행',
         account: '110-325-774667',
-        kakao: 'https://qr.kakaopay.com/FEhonaYzK',
       },
     ],
   },
@@ -40,23 +36,20 @@ const accountInfo = {
       {
         type: '신부',
         name: '이세인',
-        bank: '하나은행',
-        account: '415-910602-20507',
-        kakao: 'https://qr.kakaopay.com/Ej7wwYIgL',
+        bank: '신한은행',
+        account: '110-437-765585',
       },
       {
         type: '아버지',
         name: '이형찬',
         bank: '신한은행',
-        account: '577-06-000606',
-        kakao: 'https://qr.kakaopay.com/FYysFddA1',
+        account: '110-021-168979',
       },
       {
         type: '어머니',
         name: '김미경',
-        bank: '신한은행',
-        account: '110-325-774667',
-        kakao: 'https://qr.kakaopay.com/FEhonaYzK',
+        bank: '우리은행',
+        account: '1002-753-303836',
       },
     ],
   },
@@ -76,12 +69,6 @@ function Account(props) {
       newOpen[type] = !curOpen[type];
       return newOpen;
     });
-  };
-
-  const handleClickKakaoPay = (e, item) => {
-    e.preventDefault();
-    e.stopPropagation();
-    window.open(item.kakao);
   };
 
   const handleCopyAccount = () => {
@@ -130,17 +117,6 @@ function Account(props) {
                     </div>
                   </div>
                   <div className="bottom">
-                    <div
-                      className="kakao"
-                      onClick={(e) => handleClickKakaoPay(e, item)}
-                      aria-hidden="true"
-                      style={{
-                        visibility:
-                          item.bank === '우리은행' ? 'hidden' : 'visible',
-                      }}
-                    >
-                      <img src={kakaopayIcon} alt="" /> 송금
-                    </div>
                     <CopyToClipboard
                       text={item.account}
                       onCopy={handleCopyAccount}
