@@ -185,7 +185,7 @@ function App() {
             <div className="date-line" />
             <div className="date-info">
               <div className="date">2026년 3월 28일 토요일 오후 1시 30분</div>
-              <div className="venue">더파티움여의도</div>
+              <div className="venue">더파티움 여의도 2층 파티움홀</div>
             </div>
             <div className="date-line" />
           </div>
