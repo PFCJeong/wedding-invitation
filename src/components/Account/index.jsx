@@ -57,8 +57,8 @@ const accountInfo = {
 
 function Account(props) {
   const [accountOpen, setAccountOpen] = useState({
-    groom: false,
-    bride: false,
+    groom: true,
+    bride: true,
   });
 
   const handleOpenAccount = (e, type) => {
