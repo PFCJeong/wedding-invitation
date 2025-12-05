@@ -17,7 +17,7 @@ function Gallery({ handleClickImage }) {
           .slice(0, showMore ? Object.keys(photoList).length : 9)
           .map((photo) => (
             <div
-              className="photo-item"
+              className={`photo-item ${photo === '2-3' ? 'landscape' : ''}`}
               key={`photo_${photo}`}
               onClick={() => handleClickImage(photo)}
               aria-hidden="true"
