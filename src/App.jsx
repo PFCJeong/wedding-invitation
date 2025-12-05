@@ -40,7 +40,7 @@ export const shareKakao = () => {
       content: {
         title: '정원식 ♥ 이세인의 결혼식에 초대합니다.',
         description: '26.03.28 PM 1:30 · 더파티움여의도',
-        imageUrl: 'https://wonsik-se.in/main3.jpg',
+        imageUrl: 'https://wonsik-se.in/main4.png',
         link: {
           mobileWebUrl: 'https://wonsik-se.in',
           webUrl: 'https://wonsik-se.in',
