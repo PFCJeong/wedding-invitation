@@ -19,14 +19,14 @@ const accountInfo = {
       {
         type: '아버지',
         name: '정동명',
-        bank: '신한은행',
-        account: '577-06-000606',
+        bank: '우리은행',
+        account: '103-07-220411',
       },
       {
         type: '어머니',
         name: '이기옥',
-        bank: '신한은행',
-        account: '110-325-774667',
+        bank: '기업은행',
+        account: '010-2477-6399',
       },
     ],
   },
