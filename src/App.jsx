@@ -39,7 +39,7 @@ export const shareKakao = () => {
       objectType: 'feed',
       content: {
         title: '정원식 ♥ 이세인의 결혼식에 초대합니다.',
-        description: '26.03.28 PM 1:30 · 더파티움여의도',
+        description: '26년 3월 28일 오후 1시 30분\n더파티움여의도',
         imageUrl: 'https://wonsik-se.in/main5.png',
         link: {
           mobileWebUrl: 'https://wonsik-se.in',
