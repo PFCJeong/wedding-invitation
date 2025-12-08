@@ -1,55 +1,84 @@
 /* eslint-disable no-nested-ternary, react/jsx-one-expression-per-line,
 react/jsx-props-no-spreading, react/prop-types, indent */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import Slider from 'react-slick';
 
-import arrowIcon from '../../assets/icons/arrow.png';
-import arrowUpIcon from '../../assets/icons/arrow-up.png';
 import photoList from './photo';
 
-function Gallery({ handleClickImage }) {
-  const [showMore, setShowMore] = useState(false);
+function Gallery() {
+  const sliderRef = useRef(null);
+  const [current, setCurrent] = useState(0);
+  const [isLandscape, setIsLandscape] = useState(false);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    swipeToSlide: true,
+    swipe: true,
+    arrows: false,
+    beforeChange: (slide, newSlide) => setCurrent(newSlide),
+  };
+
+  const handlePrevious = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const handleImageLoad = (e) => {
+    const img = e.target;
+    const isWide = img.naturalWidth > img.naturalHeight;
+    setIsLandscape(isWide);
+  };
 
   return (
-    <div className="gallery">
+    <div className={`gallery ${isLandscape ? 'landscape-mode' : ''}`}>
       <div className="title">갤러리</div>
-      <div className="gallery-grid">
-        {Object.keys(photoList)
-          .slice(0, showMore ? Object.keys(photoList).length : 9)
-          .map((photo) => (
+      <div className="gallery-slider-wrapper">
+        <Slider ref={sliderRef} {...settings}>
+          {Object.keys(photoList).map((photo) => (
             <div
-              className={`photo-item ${photo === '2-3' ? 'landscape' : ''}`}
+              className="photo-slide"
               key={`photo_${photo}`}
-              onClick={() => handleClickImage(photo)}
-              aria-hidden="true"
             >
               <img
                 src={photoList[photo]}
                 alt=""
+                onLoad={handleImageLoad}
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               />
             </div>
           ))}
+        </Slider>
+        <div className="gallery-arrows">
+          <button
+            type="button"
+            className="arrow-btn prev"
+            onClick={handlePrevious}
+            aria-label="Previous"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className="arrow-btn next"
+            onClick={handleNext}
+            aria-label="Next"
+          >
+            ›
+          </button>
+        </div>
       </div>
-      {showMore ? (
-        <div
-          className="more-icon"
-          aria-hidden="true"
-          onClick={() => setShowMore(false)}
-        >
-          <img src={arrowUpIcon} alt="" />
-          사진 접기
+      <div className="gallery-controls">
+        <div className="gallery-index">
+          <span>{current + 1}</span> / <span>{Object.keys(photoList).length}</span>
         </div>
-      ) : (
-        <div
-          className="more-icon"
-          aria-hidden="true"
-          onClick={() => setShowMore(true)}
-        >
-          <img src={arrowIcon} alt="" />
-          사진 더보기
-        </div>
-      )}
+      </div>
     </div>
   );
 }

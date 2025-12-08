@@ -15,7 +15,6 @@ import DDay from './components/DDay';
 import Location from './components/Location';
 import RsvpModal from './components/RsvpModal';
 import Gallery from './components/Gallery';
-import ImageSlide from './components/ImageSlide';
 import Quiz from './components/Quiz';
 // import GuestBook from './components/GuestBook';
 import WriteModal from './components/GuestBook/WriteModal';
@@ -27,6 +26,10 @@ import kakaoIcon from './assets/icons/kakao-talk.png';
 
 import './style.scss';
 import 'react-toastify/dist/ReactToastify.css';
+/* eslint-disable import/no-unresolved */
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+/* eslint-enable import/no-unresolved */
 
 export const shareKakao = () => {
   if (window.Kakao) {
@@ -78,7 +81,6 @@ function App() {
 
   const [copyModal, setCopyModal] = useState('');
   const [rsvpModal, setRsvpModal] = useState(false);
-  const [imageModal, setImageModal] = useState(false);
   const [writeModal, setWriteModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState('');
   const [quizModal, setQuizModal] = useState(false);
@@ -125,16 +127,6 @@ function App() {
 
   const handleCloseLinkModal = () => {
     setCopyModal('');
-  };
-
-  const handleClickImage = (key) => {
-    setImageModal(key);
-    lockScroll();
-  };
-
-  const handleCloseImageModal = () => {
-    setImageModal('');
-    openScroll();
   };
 
   // const handleClickQuiz = () => {
@@ -241,7 +233,7 @@ function App() {
         {/* <Contact /> */}
         <Calendar />
         <DDay />
-        <Gallery handleClickImage={handleClickImage} />
+        <Gallery />
         <Location />
         <Account setCopyModal={setCopyModal} />
       </div>
@@ -254,12 +246,6 @@ function App() {
         </div>
       )}
       {rsvpModal && <RsvpModal handleCloseRsvpModal={handleCloseRsvpModal} />}
-      {imageModal && (
-        <ImageSlide
-          imageModal={imageModal}
-          handleCloseImageModal={handleCloseImageModal}
-        />
-      )}
       {writeModal && (
         <WriteModal
           handleWriteModal={handleWriteModal}
