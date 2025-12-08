@@ -107,23 +107,21 @@ function Account(props) {
             <div className={`account-content ${type}`}>
               {accountInfo[type].list.map((item) => (
                 <div className="account-content-item" key={item.name}>
-                  <div className="top">
+                  <div className="account-details">
                     <div className="name">
                       {item.type} <span>{item.name}</span>
                     </div>
-                    <div className="account-num">
-                      <span>{item.bank}</span>
-                      {item.account}
+                    <div className="account-number">{item.account}</div>
+                    <div className="account-info">
+                      {item.bank}
                     </div>
                   </div>
-                  <div className="bottom">
-                    <CopyToClipboard
-                      text={item.account}
-                      onCopy={handleCopyAccount}
-                    >
-                      <div className="copy">계좌번호 복사</div>
-                    </CopyToClipboard>
-                  </div>
+                  <CopyToClipboard
+                    text={item.account}
+                    onCopy={handleCopyAccount}
+                  >
+                    <div className="copy-btn">복사</div>
+                  </CopyToClipboard>
                 </div>
               ))}
             </div>
