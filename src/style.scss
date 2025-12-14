@@ -213,6 +213,13 @@ body {
     z-index: 2;
     color: #907D9E;
 
+    .title {
+      .heart {
+        color: #907D9E;
+        font-style: normal;
+      }
+    }
+
     .buttons {
       display: flex;
       align-items: center;

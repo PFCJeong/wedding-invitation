@@ -182,7 +182,7 @@ function App() {
         </div>
       )}
       <div className="header">
-        <div className="title">WONSIK & SEIN</div>
+        <div className="title">원식 <span className="heart">♥︎</span> 세인</div>
         <div className="buttons">
           <CopyToClipboard text="https://wonsik-se.in" onCopy={handleCopyOk}>
             <img src={linkIcon} alt="" />
