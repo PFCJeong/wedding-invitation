@@ -21,11 +21,11 @@ import image20 from '../../assets/photo/20.webp';
 import image21 from '../../assets/photo/21.webp';
 
 const photoList = {
-  '1-1': image1,
-  '1-2': image2,
-  '1-3': image3,
-  '2-1': image4,
-  '2-2': image5,
+  '1-1': image4,
+  '1-2': image5,
+  '1-3': image1,
+  '2-1': image2,
+  '2-2': image3,
   '2-3': image6,
   '3-1': image7,
   '3-2': image8,
