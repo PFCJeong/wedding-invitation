@@ -19,13 +19,14 @@ import image18 from '../../assets/photo/18.webp';
 import image19 from '../../assets/photo/19.webp';
 import image20 from '../../assets/photo/20.webp';
 import image21 from '../../assets/photo/21.webp';
+import image22 from '../../assets/photo/22.webp';
 
 const photoList = {
-  '1-1': image4,
-  '1-2': image5,
-  '1-3': image1,
-  '2-1': image2,
-  '2-2': image3,
+  '1-1': image1,
+  '1-2': image2,
+  '1-3': image3,
+  '2-1': image4,
+  '2-2': image5,
   '2-3': image6,
   '3-1': image7,
   '3-2': image8,
@@ -42,6 +43,7 @@ const photoList = {
   '7-1': image19,
   '7-2': image20,
   '7-3': image21,
+  '8-1': image22,
 };
 
 export default photoList;

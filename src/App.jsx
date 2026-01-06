@@ -20,7 +20,7 @@ import Quiz from './components/Quiz';
 import WriteModal from './components/GuestBook/WriteModal';
 import DeleteModal from './components/GuestBook/DeleteModal';
 
-import mainImg from './assets/photo/main3.webp';
+import mainImg from './assets/photo/main.webp';
 import linkIcon from './assets/icons/link.png';
 import kakaoIcon from './assets/icons/kakao-talk.png';
 
